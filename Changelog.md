@@ -8,12 +8,45 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
-### Planned
-- Terminal intro animation
-- GG lettermark with glow effect
-- All page routes (about, projects, blog, links)
-- Social links integration
+### Planned (Stage 2)
+- Fill in About page content
+- Add real project details
+- Refine animations
+- SEO optimization
+
+---
+
+## [0.1.0] - 2026-01-15
+
+### Added
+- **Full MVP Implementation + Deployment**
+- 🚀 **Live at:** https://250115ggmf-website.vercel.app
+- Terminal intro with typewriter animation
+- GG lettermark with cyan glow effect
+- Homepage with system boot → dashboard transition
+- All page routes:
+  - `/about` - Bio placeholder
+  - `/projects` - Project cards
+  - `/blog` - Empty state
+  - `/links` - Curated resources
+- Components:
+  - Terminal + TypeWriter
+  - GGLogo
+  - Navigation (desktop)
+  - MobileNav (hamburger)
+  - Footer
+  - SocialLinks
+  - PageTransition
 - Mobile responsive design
+- Framer Motion animations throughout
+
+### Technical
+- Next.js 16.1.2 (App Router)
+- React 19.2.3
+- Tailwind CSS 4
+- Framer Motion 12.26.2
+- TypeScript
+- Deployed to Vercel (production)
 
 ---
 
@@ -33,7 +66,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 - Aesthetic: Minimal cyberpunk (black/white/cyan)
 - Identity: GG lettermark (no avatar)
 - Structure: Hybrid (homepage + separate pages)
-- Tech: Next.js 14, TypeScript, Tailwind, shadcn/ui, Framer Motion
+- Tech: Next.js, TypeScript, Tailwind, Framer Motion
 - Hosting: Vercel
 
 ---
