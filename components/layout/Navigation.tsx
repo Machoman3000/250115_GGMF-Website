@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { MobileNav } from "./MobileNav";
 
 const navLinks = [
   { href: "/about", label: "ABOUT" },
@@ -25,7 +26,7 @@ export function Navigation() {
           </motion.span>
         </Link>
 
-        {/* Nav Links - Hidden on mobile */}
+        {/* Desktop Nav Links - Hidden on mobile */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -41,6 +42,9 @@ export function Navigation() {
             </li>
           ))}
         </ul>
+
+        {/* Mobile Nav - Hidden on desktop */}
+        <MobileNav />
       </div>
     </nav>
   );
