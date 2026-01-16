@@ -77,7 +77,7 @@ export function Terminal({ onComplete }: TerminalProps) {
 
   return (
     <AnimatePresence>
-      {!isExiting && (
+      {!isExiting ? (
         <motion.div
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background"
           initial={{ opacity: 1 }}
@@ -96,19 +96,19 @@ export function Terminal({ onComplete }: TerminalProps) {
 
             {/* Current line being typed */}
             {currentLineIndex < BOOT_LINES.length &&
-              !completedLines.includes(BOOT_LINES[currentLineIndex]) && (
-                <p className="font-mono text-lg text-white md:text-xl">
-                  <TypeWriter
-                    text={BOOT_LINES[currentLineIndex]}
-                    delay={50}
-                    onComplete={handleLineComplete}
-                  />
-                </p>
-              )}
+            !completedLines.includes(BOOT_LINES[currentLineIndex]) ? (
+              <p className="font-mono text-lg text-white md:text-xl">
+                <TypeWriter
+                  text={BOOT_LINES[currentLineIndex]}
+                  delay={50}
+                  onComplete={handleLineComplete}
+                />
+              </p>
+            ) : null}
 
             {/* Enter button */}
             <AnimatePresence>
-              {showEnterButton && (
+              {showEnterButton ? (
                 <motion.button
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -119,13 +119,13 @@ export function Terminal({ onComplete }: TerminalProps) {
                 >
                   [ ENTER ]
                 </motion.button>
-              )}
+              ) : null}
             </AnimatePresence>
           </div>
 
           {/* Skip hint */}
           <AnimatePresence>
-            {showHint && (
+            {showHint ? (
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.3 }}
@@ -135,10 +135,10 @@ export function Terminal({ onComplete }: TerminalProps) {
               >
                 Press any key or click to skip
               </motion.p>
-            )}
+            ) : null}
           </AnimatePresence>
         </motion.div>
-      )}
+      ) : null}
     </AnimatePresence>
   );
 }

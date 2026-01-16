@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 
+// Hoisted to avoid re-creating on each render
+const lineStyle = {
+  background:
+    "linear-gradient(90deg, transparent 0%, #00FFFF 50%, transparent 100%)",
+} as const;
+
 export function GGLogo() {
   return (
     <div className="flex flex-col items-center">
@@ -34,10 +40,7 @@ export function GGLogo() {
       {/* Decorative horizontal line */}
       <motion.div
         className="mt-4 h-px w-full max-w-xs"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, #00FFFF 50%, transparent 100%)",
-        }}
+        style={lineStyle}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{

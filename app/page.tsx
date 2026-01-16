@@ -30,10 +30,10 @@ export default function Home() {
   return (
     <>
       <AnimatePresence>
-        {showTerminal && <Terminal onComplete={handleTerminalComplete} />}
+        {showTerminal ? <Terminal onComplete={handleTerminalComplete} /> : null}
       </AnimatePresence>
 
-      {!showTerminal && (
+      {!showTerminal ? (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -75,7 +75,7 @@ export default function Home() {
             </motion.div>
           </main>
         </motion.div>
-      )}
+      ) : null}
     </>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 interface TypeWriterProps {
@@ -12,6 +12,10 @@ interface TypeWriterProps {
 export function TypeWriter({ text, delay = 50, onComplete }: TypeWriterProps) {
   const [displayedText, setDisplayedText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
+
+  // Store callback in ref to avoid dependency issues
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
     // Reset when text changes
@@ -27,12 +31,12 @@ export function TypeWriter({ text, delay = 50, onComplete }: TypeWriterProps) {
       } else {
         clearInterval(interval);
         setIsComplete(true);
-        onComplete?.();
+        onCompleteRef.current?.();
       }
     }, delay);
 
     return () => clearInterval(interval);
-  }, [text, delay, onComplete]);
+  }, [text, delay]);
 
   return (
     <span className="inline-flex items-center font-mono">

@@ -45,7 +45,7 @@ export function MobileNav() {
 
       {/* Mobile Menu Dropdown */}
       <AnimatePresence>
-        {isOpen && (
+        {isOpen ? (
           <motion.div
             className="absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-white/10 overflow-hidden"
             initial={{ opacity: 0, height: 0 }}
@@ -75,7 +75,7 @@ export function MobileNav() {
               ))}
             </ul>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </div>
   );
