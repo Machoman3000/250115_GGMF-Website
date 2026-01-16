@@ -7,23 +7,16 @@ import { Navigation } from "@/components/layout/Navigation";
 import { GGLogo } from "@/components/GGLogo";
 import { SocialLinks } from "@/components/SocialLinks";
 
-// Lazy load Terminal - only needed on first visit
+// Lazy load Terminal
 const Terminal = dynamic(
   () => import("@/components/terminal/Terminal").then((mod) => mod.Terminal),
   { ssr: false }
 );
 
-// Check localStorage for previous visit (client-side only)
-function getInitialTerminalState(): boolean {
-  if (typeof window === "undefined") return true;
-  return !localStorage.getItem("gg-visited");
-}
-
 export default function Home() {
-  const [showTerminal, setShowTerminal] = useState(getInitialTerminalState);
+  const [showTerminal, setShowTerminal] = useState(true);
 
   const handleTerminalComplete = () => {
-    localStorage.setItem("gg-visited", "true");
     setShowTerminal(false);
   };
 
