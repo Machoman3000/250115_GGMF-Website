@@ -1,4 +1,5 @@
-import { Navigation, Footer } from "@/components/layout";
+import { Navigation } from "@/components/layout/Navigation";
+import { Footer } from "@/components/layout/Footer";
 
 export default function AboutPage() {
   return (
@@ -25,7 +26,7 @@ export default function AboutPage() {
               CURRENTLY
             </h2>
             <p className="font-mono text-white/80">
-              [ What you're working on, learning, or building ]
+              {"[ What you're working on, learning, or building ]"}
             </p>
           </section>
 

@@ -16,17 +16,27 @@
 |----------|---------|------|
 | **Project Brief** | High-level overview & decisions | `Project Brief.md` |
 | **Design Spec** | Full visual & UX specification | `docs/2026-01-15-gg-website-design.md` |
-| **Implementation Plan** | Step-by-step build guide | `docs/plans/2026-01-15-gg-website-mvp.md` |
+| **MVP Plan (Stage 1)** | Original build guide (complete) | `docs/plans/2026-01-15-gg-website-mvp.md` |
+| **Phase 2 Plan** | Current implementation plan | `docs/plans/2026-01-15-gg-website-phase2.md` |
+| **Performance Audit** | Vercel best practices audit | `docs/audits/2026-01-15-vercel-audit.md` |
 | **Project Status** | Current state & blockers | `Project_Status.md` |
 | **Changelog** | History of changes | `Changelog.md` |
 | **Reference** | External docs & resources | `Reference.md` |
 
 ## Current Status
 
-**Phase:** MVP Complete ✅ DEPLOYED
-**Stage:** MVP (Stage 1) ✅
+**Stage 1 (MVP):** ✅ COMPLETE + DEPLOYED
+**Stage 2:** 🔜 NEXT (Performance + Content)
 **Live URL:** https://250115ggmf-website.vercel.app
-**Next:** Stage 2 - Add real content (social links, projects, about bio)
+
+### What's Next (Phase 2)
+
+See: `docs/plans/2026-01-15-gg-website-phase2.md`
+
+1. **Performance fixes** (3 critical issues from audit)
+2. **Code quality** (3 medium issues)
+3. **Content** (social links, bio, projects - needs user input)
+4. **Polish** (SEO, favicon, animations)
 
 ## Skills to Use
 
@@ -71,8 +81,11 @@ npm test         # Tests (when configured)
 ├── Reference.md           ← External resources
 ├── docs/
 │   ├── 2026-01-15-gg-website-design.md
+│   ├── audits/
+│   │   └── 2026-01-15-vercel-audit.md  ← Performance audit
 │   └── plans/
-│       └── 2026-01-15-gg-website-mvp.md
+│       ├── 2026-01-15-gg-website-mvp.md     ← Stage 1 (complete)
+│       └── 2026-01-15-gg-website-phase2.md  ← Stage 2 (current)
 ├── app/
 │   ├── layout.tsx
 │   ├── page.tsx           ← Homepage (terminal → dashboard)

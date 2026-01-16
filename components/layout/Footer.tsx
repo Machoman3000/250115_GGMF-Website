@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* System identifier */}
         <span className="font-mono text-sm text-white/50 tracking-wider">
-          ////// GG.SYSTEM v1.0 //////
+          {"////// GG.SYSTEM v1.0 //////"}
         </span>
 
         {/* Copyright */}

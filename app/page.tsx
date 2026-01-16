@@ -1,42 +1,31 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import dynamic from "next/dynamic";
 import { AnimatePresence, motion } from "framer-motion";
-import { Terminal } from "@/components/terminal";
-import { Navigation } from "@/components/layout";
+import { Navigation } from "@/components/layout/Navigation";
 import { GGLogo } from "@/components/GGLogo";
 import { SocialLinks } from "@/components/SocialLinks";
 
-export default function Home() {
-  const [showTerminal, setShowTerminal] = useState(true);
-  const [hasVisited, setHasVisited] = useState(false);
+// Lazy load Terminal - only needed on first visit
+const Terminal = dynamic(
+  () => import("@/components/terminal/Terminal").then((mod) => mod.Terminal),
+  { ssr: false }
+);
 
-  // Check if user has visited before
-  useEffect(() => {
-    const visited = localStorage.getItem("gg-visited");
-    if (visited) {
-      setShowTerminal(false);
-      setHasVisited(true);
-    }
-  }, []);
+// Check localStorage for previous visit (client-side only)
+function getInitialTerminalState(): boolean {
+  if (typeof window === "undefined") return true;
+  return !localStorage.getItem("gg-visited");
+}
+
+export default function Home() {
+  const [showTerminal, setShowTerminal] = useState(getInitialTerminalState);
 
   const handleTerminalComplete = () => {
     localStorage.setItem("gg-visited", "true");
     setShowTerminal(false);
-    setHasVisited(true);
   };
-
-  // Skip on any key press
-  useEffect(() => {
-    const handleKeyDown = () => {
-      if (showTerminal) {
-        handleTerminalComplete();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [showTerminal]);
 
   return (
     <>
@@ -82,7 +71,7 @@ export default function Home() {
               transition={{ delay: 0.8 }}
               className="absolute bottom-8 font-mono text-xs text-white/20"
             >
-              ////// GG.SYSTEM v1.0 //////
+              {"////// GG.SYSTEM v1.0 //////"}
             </motion.div>
           </main>
         </motion.div>

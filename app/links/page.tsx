@@ -1,4 +1,5 @@
-import { Navigation, Footer } from "@/components/layout";
+import { Navigation } from "@/components/layout/Navigation";
+import { Footer } from "@/components/layout/Footer";
 
 interface Link {
   title: string;

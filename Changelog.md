@@ -8,11 +8,43 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
-### Planned (Stage 2)
-- Fill in About page content
-- Add real project details
-- Refine animations
-- SEO optimization
+### Phase 2 Tasks (Prioritized)
+
+See: `docs/plans/2026-01-15-gg-website-phase2.md`
+
+**🔴 CRITICAL - Performance (Do First):**
+- [ ] `bundle-dynamic-imports` - Lazy load Terminal component with next/dynamic
+- [ ] `bundle-barrel-imports` - Replace barrel imports with direct imports
+- [ ] `client-event-listeners` - Remove duplicate keydown listener in page.tsx
+
+**🟡 MEDIUM - Code Quality:**
+- [ ] `rendering-conditional-render` - Replace `&&` with ternary operators
+- [ ] `rendering-hoist-jsx` - Hoist static style object in GGLogo.tsx
+- [ ] `rerender-dependencies` - Use useRef for onComplete callback in TypeWriter
+
+**📝 Content:**
+- [ ] Fill in About page bio (real content)
+- [ ] Add real project details (2-3 projects)
+- [ ] Update social media URLs (currently placeholders)
+- [ ] Confirm tagline or update
+
+**✨ Polish:**
+- [ ] Refine animation timings
+- [ ] SEO optimization (meta tags, OpenGraph)
+- [ ] Add favicon
+
+---
+
+## [0.1.1] - 2026-01-15
+
+### Added
+- Performance audit report (`docs/audits/2026-01-15-vercel-audit.md`)
+- Phase 2 planning document (`docs/plans/2026-01-15-gg-website-phase2.md`)
+
+### Audited
+- Ran Vercel React Best Practices audit
+- Identified 3 critical, 5 medium issues
+- Documented all findings with fix recommendations
 
 ---
 
