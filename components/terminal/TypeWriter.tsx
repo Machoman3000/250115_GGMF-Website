@@ -9,7 +9,7 @@ interface TypeWriterProps {
   onComplete?: () => void;
 }
 
-export function TypeWriter({ text, delay = 50, onComplete }: TypeWriterProps) {
+export function TypeWriter({ text, delay = 30, onComplete }: TypeWriterProps) {
   const [displayedText, setDisplayedText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
 

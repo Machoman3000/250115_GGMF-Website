@@ -15,9 +15,9 @@ const BOOT_LINES = [
   "> ACCESS GRANTED",
 ];
 
-const LINE_DELAY = 300; // ms between lines
-const AUTO_SKIP_DELAY = 8000; // 8 seconds
-const HINT_DELAY = 2000; // 2 seconds before hint appears
+const LINE_DELAY = 200; // ms between lines
+const AUTO_SKIP_DELAY = 6000; // 6 seconds
+const HINT_DELAY = 1500; // 1.5 seconds before hint appears
 
 export function Terminal({ onComplete }: TerminalProps) {
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
@@ -100,7 +100,7 @@ export function Terminal({ onComplete }: TerminalProps) {
               <p className="font-mono text-lg text-white md:text-xl">
                 <TypeWriter
                   text={BOOT_LINES[currentLineIndex]}
-                  delay={50}
+                  delay={30}
                   onComplete={handleLineComplete}
                 />
               </p>
